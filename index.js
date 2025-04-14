@@ -12,3 +12,15 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Pull your server into this file and start it!
 */
+
+//Import server from server.js:
+const server = require("./api/server");
+
+//Make port dynamic:
+require("dotenv").config();
+const port = process.env.PORT || 9000;
+
+//Setup server to run/listen:
+server.listen(port, () => {
+  console.log(`Clay's server is up and running on http://localhost:${port}`);
+});
